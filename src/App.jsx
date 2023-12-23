@@ -18,7 +18,7 @@ function App() {
       <AppContext>
         <Header categoryRef={categoryRef} aboutRef={aboutRef}/>
         <Routes>
-          <Route path="/" element={<Home categoryRef={categoryRef} />} />
+          <Route path="/ecom/" element={<Home categoryRef={categoryRef} />} />
           <Route path="/category/:id" element={<Category />} />
           <Route path="/product/:id" element={<SingleProduct />} />
           <Route path="/order" element={<Order/>} />
