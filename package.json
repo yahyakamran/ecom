@@ -22,6 +22,7 @@
     "react-router-dom": "^6.4.5",
     "react-simple-toasts": "^5.10.0",
     "sass": "^1.56.2",
+    "string-width": "^4.2.0",
     "tailwind": "^4.0.0",
     "vite": "^4.4.9",
     "vite-jsconfig-paths": "^2.0.1",

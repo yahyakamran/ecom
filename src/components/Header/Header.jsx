@@ -19,37 +19,23 @@ const Header = ({categoryRef, aboutRef}) => {
     const [showSearch , setShowSearch] = useState(false);
     const navigate = useNavigate()
 
-    const handleCategoryScroll = (categoryRef) => {
+    const handleRefScroll = (Ref) => {
         const route = window.location.pathname
-        if (route !== "/")
+        if (route !== "/ecom")
         {
-            navigate("/")
+            navigate("/ecom")
             setTimeout(function(){
-                categoryRef.current?.scrollIntoView({behavior:"smooth"});
+                Ref.current?.scrollIntoView({behavior:"smooth"});
             },300)
         }
         else
         {
             categoryRef.current?.scrollIntoView({behavior:"smooth"});
-        }          
-    }
-    const handleAboutScroll = (aboutRef) => {
-        const route = window.location.pathname
-        if (route !== "/")
-        {
-            navigate("/")
-            setTimeout(function(){
-                aboutRef.current?.scrollIntoView({behavior:"smooth"});
-            },600)
         }
-        else
-        {
-            aboutRef.current?.scrollIntoView({behavior:"smooth"});
-        }    
     }
+
     const handleScroll = () =>{
         const ofset = window.scrollY;
-        
 
         if(ofset>300){
             setScrolled(true);
@@ -68,7 +54,7 @@ const Header = ({categoryRef, aboutRef}) => {
 
     useEffect(()=>{
         window.addEventListener("scroll",handleScroll);
-        getProducts();    
+        getProducts();
     },[])
 
     return (
@@ -77,12 +63,12 @@ const Header = ({categoryRef, aboutRef}) => {
                 <div className="header-content">
                     <div className="left">
                         <ul>
-                            <li onClick={()=>navigate("/")}>Home</li>
-                            <li onClick={()=>handleCategoryScroll(aboutRef)}>About  </li>
-                            <li onClick={()=>handleCategoryScroll(categoryRef)} >Category</li>
+                            <li onClick={()=>navigate("/ecom")}>Home</li>
+                            <li onClick={()=>handleRefScroll(aboutRef)}>About  </li>
+                            <li onClick={()=>handleRefScroll(categoryRef)} >Category</li>
                         </ul>
                     </div>
-                    <div className="center" onClick={()=>navigate("/")}>Demo Furnitures.</div>
+                    <div className="center" onClick={()=>navigate("/ecom")}>Demo Furnitures.</div>
                     <div className="right">
                         <TbSearch
                         onClick={()=>{
